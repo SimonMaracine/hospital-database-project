@@ -1,40 +1,108 @@
-# Hospital Database
+Hospital Database Tables:
 
-Tema pe care ne-am propus sa o alegem este “Hospital Database”. Ca alta optiune ar fi fost “International Space
-Station Administration Database”, insa tema ar fi fost prea complexa si prin urmare am ales aceasta tema cu
-impresia ca ar fimai simplu de implementat.
+-Patients:
+•ID(PK)
+•First_name
+•Last_name
+•Age
+•Weight
+•Gender
+•Occupation
+•Doctor_ID(FK)(one-to-many)(a patient is treated by one doctor, a doctor has many patients)
+•Treatment_ID(FK)(one-to-many)(a patient is undergoing one treatment, a treatment may be applied to many patients)
+•Room_ID(FK)(one-to-many)(a patient is assigned a single room to stay in, a room may have multiple patients assigned to it)
 
-Suntem 3 in echipa, si am considerat ca structura bazei de date sa fie compusa din 15 tabele:
+-Doctors:
+•ID(PK)
+•First_name
+•Last_name
+•Studies
+•Specialization
+•Age
+•Gender
 
-- Patients: descrie pacientii spitalului.
-- Doctors: descrie staff-ul medical care sunt experti in anumite arii ale medicinei
-- Treatments: delibereaza tratamente de catre doctori pentru anumiti pacienti in urma unei consultatii/diagnostic
-- Rooms: descrie starea camerei (daca este ocupata sau nu, si de ce pacienti sunt ocupate max 2)
-- OperationTheaters: descrie starea salilor de operatii (ce pacient se afla in respectiva sala si ce doctori ii opereaza)
-- ICUs: ...
-- Nurses: lista de asistenti medicali
-- Wardboys: lista de paznici
-- Bills: facturarea pacientilor in urma unor operatii sau diagnosticari
-- Medicines: lista de medicamente
-- Apprentices: lista de studenti de la medicina care fac practica in cadrul spitatului
-- Purchases: lista de achizitii (ex: dezinfectante, sapunuri, antivirale, mancare)
-- Storage: lista de cu rol de organizare logistic, lucruri pe care le detine deja spitalul
-- Shifts: lista turelor pentru angajatii spitalului, inclusiv practicantii
-- Partners: lista de parteneriate intre diferite institutii (ex: alte spitale, universitati, centre de cercetare)
+-Treatments:
+•ID(PK)
+•Name
+•Duration
+•Medicines(FK)(many-to-many, table at the end)(a treatment may have many medicines included, a medicine may be included in many treatments)
 
-Ca lista de atribute pentru fiecare tabel avem:
+-Rooms:
+•ID(PK)
+•Number
+•Floor
 
-- Patients: ID(PK), Nume, Prenume, Varsta, Greutate, Sex, Ocupatie, Doctor(FK), Tratament(FK), Sala asociata(FK)
-- Doctors: ID(PK), Nume, Prenume, Studii(PHD, etc.), Specializare, Varsta, Sex, Pacienti(FK)
-- Treatments: ID(PK), Denumire, Medicamente(FK), Patients(?), Durata
-- Rooms: ID(PK), Numar, Etaj
-- OperationsTheaters: ID(PK), Specializare(chirurgie, radiologie, etc.), Numar, Etaj
-- ICUs: ID(PK), Numar, Etaj, +inca ceva(nu stim acum)
-- Nurses: ID(PK), Nume, Prenume, Varsta, Studii, Sex, Pacienti(FK)
-- Wardboys: ID(PK), Nume, Prenume, Varsta, Sex, Zona de responsabilitate
-- Bills: ID(PK), Denumire, Suma, Pacient(FK)
-- Medicines: ID(PK), Denumire, Data de expriare, Furnizor
-- Apprentices: ID(PK), Nume, Prenume, Varsta, Sex, Universitate, An de studiu, Specializare, Doctor/Mentor(FK)
-- Purchases: ID(PK), Denumire, Suma, Cantitate
-- Shift: ID(PK), Begin, Ends
-- Partners: ID(pk), Denumire_institutie, tip_parteneriat, begin_partnership, end_partnership
+-ICUs:
+•ID(PK)
+•Number
+•Floor
+•Type
+
+-OperationTheaters:
+•ID(PK)
+•Specialization
+•Number
+•Floor
+
+-Nurses:
+•ID(PK)
+•First_name
+•Last_name
+•Age
+•Studies
+•Gender
+
+-Watchmen:
+•ID(FK)
+•First_name
+•Last_name
+•Age
+•Gender
+•Assigned_zone
+
+-Bills:
+•ID(PK)
+•Name
+•Sum
+•State(payed/not payed)
+•Patient(FK)(one-to-many)(a bill can only be applied to one patient, a patient can have many bills)
+
+-Medicines:
+•ID(PK)
+•Name
+•Expiration_date
+•Provider
+
+-Apprentices:
+•ID(PK)
+•First_name
+•Last_name
+•Age
+•Gender
+•University
+•Study_year
+•Specialization
+•Guide(Doctor)(FK)(one-to-many)(a apprentice can have only one guide doctor, a doctor can be guiding multiple apprentices)
+
+-Purchases:
+•ID(PK)
+•Name
+•Sum
+•Quantity
+
+-Shifts:
+•ID(PK)
+•Begin_time
+•End_time
+
+-Partners:
+•ID(PK)
+•Name
+•Partnership_type
+•Begin_date
+•End_date
+
+-Treatment_details:
+•Treatment_ID(PK)
+•Medicine_ID(PK)
+•Medicine_dosage
