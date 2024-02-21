@@ -1,108 +1,109 @@
 # Hospital Database Tables
 
 - Patients
-  - ID(PK)
-  - First_name
-  - Last_name
-  - Age
-  - Weight
-  - Gender
-  - Occupation
-  - Doctor_ID(FK)(one-to-many)(a patient is treated by one doctor, a doctor has many patients)
-  - Treatment_ID(FK)(one-to-many)(a patient is undergoing one treatment, a treatment may be applied to many patients)
-  - Room_ID(FK)(one-to-many)(a patient is assigned a single room to stay in, a room may have multiple patients assigned to it)
+  - id (PK)
+  - first_name
+  - last_name
+  - age
+  - weight
+  - gender
+  - occupation
+  - doctor_id (FK) (one-to-many) (a patient is treated by one doctor, a doctor has many patients)
+  - treatment_id (FK) (one-to-many) (a patient is undergoing one treatment, a treatment may be applied to many patients)
+  - room_number (FK) (one-to-many) (a patient is assigned a single room to stay in, a room may have multiple patients assigned to it)
 
 - Doctors
-  - ID(PK)
-  - First_name
-  - Last_name
-  - Studies
-  - Specialization
-  - Age
-  - Gender
+  - id (PK)
+  - first_name
+  - last_name
+  - age
+  - gender
+  - studies
+  - specialization
 
 - Treatments
-  - ID(PK)
-  - Name
-  - Duration
-  - Medicines(FK)(many-to-many, table at the end)(a treatment may have many medicines included, a medicine may be included in many treatments)
+  - id (PK)
+  - name
+  - duration
+  - medicine_id (FK) (many-to-many, table at the end) (a treatment may have many medicines included, a medicine may be included in many treatments)
 
 - Rooms
-  - ID(PK)
-  - Number
-  - Floor
+  - number (PK)
+  - floor
 
 - ICUs
-  - ID(PK)
-  - Number
-  - Floor
-  - Type
+  - number (PK)
+  - floor
+  - type
 
 - OperationTheaters
-  - ID(PK)
-  - Specialization
-  - Number
-  - Floor
+  - number (PK)
+  - floor
+  - specialization
 
 - Nurses
-  - ID(PK)
-  - First_name
-  - Last_name
-  - Age
-  - Studies
-  - Gender
+  - id (PK)
+  - first_name
+  - last_name
+  - age
+  - gender
+  - studies
+  - floor
 
 - Watchmen
-  - ID(FK)
-  - First_name
-  - Last_name
-  - Age
-  - Gender
-  - Assigned_zone
+  - id (PK)
+  - first_name
+  - last_name
+  - age
+  - gender
+  - assigned_zone
 
 - Bills
-  - Name
-  - ID(PK)
-  - Sum
-  - State(payed/not payed)
-  - Patient(FK)(one-to-many)(a bill can only be applied to one patient, a patient can have many bills)
+  - id (PK)
+  - name
+  - sum
+  - state (payed/not payed)
+  - patient_id (FK) (one-to-many) (a bill can only be applied to one patient, a patient can have many bills)
 
 - Medicines
-  - ID(PK)
-  - Name
-  - Expiration_date
-  - Provider
+  - id (PK)
+  - name
+  - expiration_date
+  - provider
+  - treatment_id (FK) (many-to-many)
 
 - Apprentices
-  - ID(PK)
-  - First_name
-  - Last_name
-  - Age
-  - Gender
-  - University
-  - Study_year
-  - Specialization
-  - Guide(Doctor)(FK)(one-to-many)(a apprentice can have only one guide doctor, a doctor can be guiding multiple apprentices)
+  - id (PK)
+  - first_name
+  - last_name
+  - age
+  - gender
+  - university
+  - study_year
+  - specialization
+  - doctor_id (FK) (one-to-many) (an apprentice can have only one mentor doctor, a doctor can be mentoring multiple apprentices)
 
 - Purchases
-  - ID(PK)
-  - Name
-  - Sum
-  - Quantity
+  - id (PK)
+  - name
+  - sum
+  - quantity
 
 - Shifts
-  - ID(PK)
-  - Begin_time
-  - End_time
+  - id (PK)
+  - begin_time
+  - end_time
+  - description
 
 - Partners
-  - ID(PK)
-  - Name
-  - Partnership_type
-  - Begin_date
-  - End_date
+  - id (PK)
+  - name
+  - partnership_type
+  - begin_date
+  - end_date
 
-- Treatment_details
-  - Treatment_ID(PK)
-  - Medicine_ID(PK)
-  - Medicine_dosage
+- TreatmentsMedicines
+  - treatment_id (FK)
+  - medicine_id (FK)
+  - medicine_dosage
+  - description
