@@ -53,7 +53,7 @@
   - Gender
 
 - Watchmen
-  - ID(FK)
+  - ID(PK)
   - First_name
   - Last_name
   - Age
