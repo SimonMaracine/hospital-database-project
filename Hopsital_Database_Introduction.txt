@@ -2,14 +2,14 @@
 	
 	The project we have decided to work on is the database of a hospital. 
 This is an especially important topic in our times because, as it has been proven with the recent pandemic, hospitals need a very well made and clear structure to be able to withstand the amount of patients they are receiving.
-
 	This is where a database comes in, such as the one we decided to make. 
 Databases are an extremely important part of the infrastructure of a big instituion, such as a hospital, as they first and foremost allow easy management the various information that is required for the people working in it to do their jobs. 
-For example having a database for a hospital allows us to store information about the patients of said hospital, which can then easily be accessed by a doctor for example through an application in order to make a quicker and better assesment of the patient. Another domain related to the operation of a hospital it is paramount to have a well-organised database is that of medicine management, since various medicines are used in various treatment in differing dosages, which would be extremely inefficient with the sheer amount of medicines hospitals are working with nowadays.
+For example having a database for a hospital allows us to store information about the patients of said hospital, which can then easily be accessed by a doctor for example through an application in order to make a quicker and better assesment of the patient. 
+Another domain related to the operation of a hospital it is paramount to have a well-organised database is that of medicine management, since various medicines are used in various treatment in differing dosages, which would be extremely inefficient with the sheer amount of medicines hospitals are working with nowadays.
 	With these things in mind, it’s no wonder then that almost all modern hospitals employ some kind of a database or other digital information storage solution in order more easily manage their necessary information. 
 But it is also necesarry to mention that among these modern hospitals that do use such systems for managing their information, in a lot of cases their security is not really up to today’s standards, which is definetly something to keep in mind as it can lead to some serious problems if for example a data breach was to happen and for example all the personal information of the patients in the hospital would be leaked out.
-	Below is a short explanation of what each table’s information is about.
 
+	Below is a short explanation of what each table’s information is about:
 	-Patients: contains the information about the patients of the hospital, including information regarding their undergoing treatment, what doctor they are assigned to and what room they are assigned to
 	-Doctors: contains the information about the doctors working at the hospital, including their specialization and studies
 	-Treatments: contains the information about all the treatments that are provided in the hospital, including what medicines are included in it
