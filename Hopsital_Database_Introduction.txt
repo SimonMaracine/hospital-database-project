@@ -19,18 +19,26 @@ to some serious problems if for example a data breach was to happen and for exam
 in the hospital would be leaked out.
 
 	Below is a short explanation of what each table’s information is about:
-	-Patients: contains the information about the patients of the hospital, including information regarding their undergoing treatment, what doctor they are assigned to and what room they are assigned to
+	-Patients: contains the information about the patients of the hospital, including information regarding their undergoing 
+		treatment, what doctor they are assigned to and what room they are assigned to
 	-Doctors: contains the information about the doctors working at the hospital, including their specialization and studies
-	-Treatments: contains the information about all the treatments that are provided in the hospital, including what medicines are included in it
+	-Treatments: contains the information about all the treatments that are provided in the hospital, including what medicines 
+		are included in it
 	-Rooms: contains basic information about the rooms in which the patients are staying
 	-ICUs: contains information about the ICUs(Intensive care units) that are present in the hospital, including their type
-	-OperationTheaters: contains information about the operation theaters present in the hospital, including their specialization
+	-OperationTheaters: contains information about the operation theaters present in the hospital, including their 
+		specialization
 	-Nurses: contains basic information about the nurses of the hospital
 	-Watchmen: contains basic information about the watchmen of the hopsital, including what zone they are assigned to
-	-Bills: contains information about the bills that the patients of the hospital need to pay, including whether they have been paid up or not yet and which patient it belongs to
-	-Medicines: contains information about the medicines that the hospital has available to use in its treatments, including the provider it comes from
-	-Apprentices: contains information about the current apprentices at the hospital, including which university they’re from, their specialization and which doctor is their guide/mentor
+	-Bills: contains information about the bills that the patients of the hospital need to pay, including whether they have 
+		been paid up or not yet and which patient it belongs to
+	-Medicines: contains information about the medicines that the hospital has available to use in its treatments, 
+		including the provider it comes from
+	-Apprentices: contains information about the current apprentices at the hospital, including which university they’re from, 
+		their specialization and which doctor is their guide/mentor
 	-Purchases: contains baic information about the various purchases the hospital makes
 	-Shift: contains basic information about the various shifts that the employees of the hospital are working in
-	-Partners: contains information on the various partners the hospital might have, including the type of the partnership and the period of time it’s ongoing for
-	-Treatmentdetails: an auxiliary table, in order to facilitate the manyto-many relation between medicines and treatments, and also include a few other details such as the medicine dosage in a specific treatment
+	-Partners: contains information on the various partners the hospital might have, including the type of the partnership and 
+		the period of time it’s ongoing for
+	-Treatmentdetails: an auxiliary table, in order to facilitate the many-to-many relation between medicines and treatments, and 
+		also includes a few other details such as the medicine's dosage in a specific treatment
