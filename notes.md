@@ -27,7 +27,7 @@
 
 [2] <https://journals.lww.com/jsci/fulltext/2020/47030/health_care_databases_and_its_role_in.2.aspx>
 
-- Besides helping medical proffsionals in ther day to day work, databases in health-care institutions can promote: [3]
+- Besides helping medical proffesionals in ther day to day work, databases in health-care institutions can promote: [3]
 
   - Efficiency. The data that comes from all the people that vist a hospital every day must be reported in detail for it to be properly used in a healthcare database. Afterwards in order for said data to be recorded properly, the database must be well-designed and simple to use, containing all of the necessary in-depth information required, while avoiding any unnecesarry information that doesn't serve a purpose in the workflow of the instituion.
 
@@ -35,7 +35,7 @@
 
   - Healthcare Quality Assessment. By using data from verious sources like hospitals, health departments, state and regional agencies etc., experts can more easily deduce things such as the availability, affordability, innovation and barriers to seeking healthcare of instituions in a certain region and maybe compare it with that of other regions, which can in turn lead to improvements to these things if problems are noticed.
 
-  - Tracking and Monitoring. By using the data stored in this kind of a database healthcare providers can monitor health care services and improve the quality of patient care—by gaining statistics on costs, pervasive diseases, and appropriate treatments, while medical staff can more easily provide patients with confident, efficient treatments. On top of that other healthcare institutions could safely access this information for health planning, reforms, and decision-making purposes. 
+  - Tracking and Monitoring. By using the data stored in this kind of a database healthcare providers can monitor health care services and improve the quality of patient care—by gaining statistics on costs, pervasive diseases, and appropriate treatments, while medical staff can more easily provide patients with confident, efficient treatments. On top of that other healthcare institutions could safely access this information for health planning, reforms, and decision-making purposes.
 
 - In short, databases in healthcare improve interactions between patients and their providers. Healthcare databases assist with diagnosis and treatment, manage documentation and billing, and help reduce errors in medical operations and management. Because they limit paperwork and staff, databases in healthcare reduce medical facility running costs while improving performance.
 
@@ -57,6 +57,17 @@
 
   - Laboratory and tests management. Manages all the test and lab results, which can be viewed by the staff and used for the patients’ reports.
 
-  - Reporting. Stores the already processed information, which helps management collect, analyze and view the performance data in a comprehensive format.  
+  - Reporting. Stores the already processed information, which helps management collect, analyze and view the performance data in a comprehensive format.
 
 [4] <https://existek.com/blog/hospital-managment-system/>
+
+- Hospital databases should be tailored to their specific needs. Not every hospital or heatlthcare organization is
+  the same. This means that things like:
+  - data integration for connectivity with other systems,
+  - interoperability with various healthcare systems,
+  - analytics tools and
+  - user interfaces
+  differ from organization to organization. We make our database tailored to a very small and basic hospital that
+  doesn't do much research or analytics and that doesn't need a very complex or intricate system. [5]
+
+[5] <https://www.knack.com/blog/healthcare-database-examples//>
