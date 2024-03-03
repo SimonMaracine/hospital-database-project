@@ -8,7 +8,7 @@
   the reason why databases are part of a hospital as well. History of medical data and events is essential for
   any hospital of any size. Hospitals need to store data such as patients records, inventory and financial and
   administrative data. They may also collect and store quality data and metrics, which may be used for improvement. [1]
-- An another important aspect about hospital data is its confidentiality. Hospitals store a great amount of personal,
+- Another important aspect about hospital data is its confidentiality. Hospitals store a great amount of personal,
   but necessary information about their patients and that data needs to remain confidential and needs to be protected.
   "Encrypting sensitive patient data at rest and in transit is vital for preventing unauthorized access.
   Secure Socket Layer (SSL) and Transport Layer Security (TLS) protocols are commonly used to encrypt data
@@ -26,6 +26,7 @@
     made properly
 
 [2] <https://journals.lww.com/jsci/fulltext/2020/47030/health_care_databases_and_its_role_in.2.aspx>
+
 - Besides helping medical proffsionals in ther day to day work, databases in health-care institutions can promote: [3]
 
   - Efficiency. The data that comes from all the people that vist a hospital every day must be reported in detail for it to be properly used in a healthcare database. Afterwards in order for said data to be recorded properly, the database must be well-designed and simple to use, containing all of the necessary in-depth information required, while avoiding any unnecesarry information that doesn't serve a purpose in the workflow of the instituion.
@@ -39,3 +40,23 @@
 - In short, databases in healthcare improve interactions between patients and their providers. Healthcare databases assist with diagnosis and treatment, manage documentation and billing, and help reduce errors in medical operations and management. Because they limit paperwork and staff, databases in healthcare reduce medical facility running costs while improving performance.
 
 [3] <https://www.dnsstuff.com/how-important-database-healthcare>
+
+- A hospital management system is made up of multiple componenets which make up a robust and efficient system, but their number might change depending on the specific needs of each clinic. While our project might not include all of these, here are some of the basic components that are usually included in such a system for the record. [4]
+
+  - Patient management. It is used to control patient flow. It can be used to register them, get the data of the patients’ health condition, view the treatment and check the medical history and reports.
+
+  - Appointment module. Deals with arranging the schedule of doctors according to the patients’ application, which helps to organize the availability of medical specialists according to the needs of the patients.
+
+  - Facility management. The facility management module is responsible for tracking and maintaining the room availability, the occupancy status as well as various kinds of administrative documentation.
+
+  - Inventory management. Controls the clinic's inventory and helps automate the entire supply chain for the convenience of the staff.
+
+  - Accounting. Helps organize the financial affairs of both customers and the medical institution.
+
+  - Medicine management. Contains all the usual medicines used for the specific treatments and also keeps records of a patient’s medicines used for their specific treatment.
+
+  - Laboratory and tests management. Manages all the test and lab results, which can be viewed by the staff and used for the patients’ reports.
+
+  - Reporting. Stores the already processed information, which helps management collect, analyze and view the performance data in a comprehensive format.  
+
+[4] <https://existek.com/blog/hospital-managment-system/>
