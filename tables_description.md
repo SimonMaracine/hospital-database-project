@@ -62,7 +62,7 @@
   - id (PK)
   - name
   - sum
-  - state (payed/not payed)
+  - state (paid/not paid)
   - patient_id (FK) (one-to-many) (a bill can only be applied to one patient, a patient can have many bills)
 
 - Medicines
@@ -103,7 +103,7 @@
   - end_date
 
 - TreatmentsMedicines
-  - treatment_id (FK)
-  - medicine_id (FK)
+  - treatment_id (PK)
+  - medicine_id (PK)
   - medicine_dosage
   - description
