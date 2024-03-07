@@ -10,7 +10,7 @@
   - occupation
   - doctor_id (FK) (one-to-many) (a patient is treated by one doctor, a doctor has many patients)
   - treatment_id (FK) (one-to-many) (a patient is undergoing one treatment, a treatment may be applied to many patients)
-  - room_number (FK) (one-to-many) (a patient is assigned a single room to stay in, a room may have multiple patients assigned to it)
+  - room_id (FK) (one-to-many) (a patient is assigned a single room to stay in, a room may have multiple patients assigned to it)
 
 - Doctors
   - id (PK)
@@ -20,6 +20,7 @@
   - gender
   - studies
   - specialization
+  - partner_id (FK) (many-to-many) (a doctor can have many partners, a partner is an affiliate for many doctors)
 
 - Treatments
   - id (PK)
@@ -28,8 +29,9 @@
   - medicine_id (FK) (many-to-many, table at the end) (a treatment may have many medicines included, a medicine may be included in many treatments)
 
 - Rooms
-  - number (PK)
-  - floor
+  - id (PK)
+  - type
+  - specific_room_number (FK)
 
 - ICUs
   - number (PK)
@@ -83,12 +85,6 @@
   - specialization
   - doctor_id (FK) (one-to-many) (an apprentice can have only one mentor doctor, a doctor can be mentoring multiple apprentices)
 
-- Purchases
-  - id (PK)
-  - name
-  - sum
-  - quantity
-
 - Shifts
   - id (PK)
   - begin_time
@@ -101,9 +97,20 @@
   - partnership_type
   - begin_date
   - end_date
+  - doctor_id (FK) (many-to-many)
 
 - TreatmentsMedicines
   - treatment_id (PK)
   - medicine_id (PK)
   - medicine_dosage
   - description
+
+- DoctorsPartners
+  - doctor_id (PK)
+  - partner_id (PK)
+
+- Employees
+  - id (PK)
+  - type
+  - specific_employee_id (FK) (one-to-one) (an employee has a one specific id)
+  - shift_id (FK) (one-to-many) (an employees can have many shifts, a shift is tied to only one employee)
