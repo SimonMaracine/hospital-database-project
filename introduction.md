@@ -26,23 +26,23 @@ Below is a short explanation of what each table’s information is about:
 - Patients: information about the patients of the hospital, including information regarding their
   undergoing treatment, which doctor and room they are assigned to
 - Doctors: information about the doctors working in the hospital, including their specialization and studies
+- Nurses: basic information about the nurses of the hospital
+- Watchmen: information about the watchmen of the hopsital, including what zone they are assigned to
+- Employees: general information of all employees, with more information for their specific jobs and such being found in their specific tables
+- Apprentices: information about the current apprentices at the hospital, including which university they’re from,
+  their specialization and which doctor is their mentor
 - Treatments: information about all the treatments that are provided in the hospital, including what medicines
   are included in it
+- Medicines: information about the medicines that the hospital has available to use in its treatments,
+  including the provider it comes from
 - Rooms: information about the rooms in which the patients are staying
 - ICUs: information about the ICUs (Intensive Care Units) that are present in the hospital, including their type
 - OperationTheaters: information about the operation theaters present in the hospital, including their
   specialization
-- Nurses: basic information about the nurses of the hospital
-- Watchmen: information about the watchmen of the hopsital, including what zone they are assigned to
-- Bills: information about the bills that the patients of the hospital need to pay, including whether they have
-  been paid up or not yet and which patient it belongs to
-- Medicines: information about the medicines that the hospital has available to use in its treatments,
-  including the provider it comes from
-- Apprentices: information about the current apprentices at the hospital, including which university they’re from,
-  their specialization and which doctor is their mentor
-- Purchases: basic information about the various purchases the hospital makes
+- Bills: information about the bills that the patients of the hospital need to pay, including whether they have been paid up or not yet and which patient it belongs to
 - Shifts: information about the various shifts that the employees of the hospital are working in
 - Partners: information about the various partners the hospital might have, including the type of the partnership and
   the period of time
 - TreatmentsMedicines: an auxiliary table for facilitating the many-to-many relation between medicines and
   treatments; it also includes a few other details such as the medicine's dosage in a specific treatment
+- DoctorsPartners: auxiliary table for the many-to-many relation between doctors and partners
