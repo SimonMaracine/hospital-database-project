@@ -65,7 +65,7 @@
   - name
   - sum
   - state (paid/not paid)
-  - patient_id (FK) (one-to-many) (a bill can only be applied to one patient, a patient can have many bills)
+  - patient_id (FK) (one-to-many) (a bill can only be associated to one patient, a patient can pay many bills)
 
 - Medicines
   - id (PK)
@@ -113,4 +113,4 @@
   - id (PK)
   - type
   - specific_employee_id (FK) (one-to-one) (an employee has a one specific id)
-  - shift_id (FK) (one-to-many) (an employees can have many shifts, a shift is tied to only one employee)
+  - shift_id (FK) (one-to-many) (an employee can have many shifts, a shift is tied to only one employee)
