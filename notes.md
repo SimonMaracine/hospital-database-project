@@ -1,4 +1,4 @@
-# General ideeas
+# General ideas
 
   Data and databases in hospitals are important, because they allow specialists to improve the system.
   "Effective database management enables healthcare providers to make informed decisions, improve patient care,
