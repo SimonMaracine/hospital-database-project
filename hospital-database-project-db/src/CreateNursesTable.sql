@@ -1,6 +1,6 @@
 CREATE TABLE [dbo].[Nurses]
 (
-	[id] INT NOT NULL PRIMARY KEY, 
+    [id] INT NOT NULL PRIMARY KEY, 
     [first_name] CHAR(32) NOT NULL, 
     [last_name] CHAR(32) NOT NULL, 
     [age] INT NOT NULL, 

@@ -1,6 +1,6 @@
 obj/
 bin/
 .vs/
-.dbdml
-.jfm
-.htm
+*.dbmdl
+*.jfm
+*.htm
