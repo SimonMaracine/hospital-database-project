@@ -60,25 +60,7 @@
     <Folder Include="Tables files" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="src\CreateBillsTable.sql" />
-    <Build Include="src\CreateDoctorsTable.sql" />
-    <Build Include="src\CreateICUsTable.sql" />
-    <Build Include="src\CreateMedicinesTable.sql" />
-    <Build Include="src\CreateNursesTable.sql" />
-    <Build Include="src\CreateOperationTheatersTable.sql" />
-    <Build Include="src\CreatePatientsTable.sql" />
-    <Build Include="src\CreateRoomsTable.sql" />
-    <Build Include="src\CreateTreatmentsTable.sql" />
-    <Build Include="src\CreateWatchmenTable.sql" />
-    <Build Include="Tables files\dbo.Table.sql" />
-    <Build Include="Tables files\dbo.Test2.sql" />
-    <Build Include="Tables files\dbo.TestTable.sql" />
-    <Build Include="src\CreateApprenticesTable.sql" />
-    <Build Include="src\CreateShiftsTable.sql" />
-    <Build Include="src\CreatePartnersTable.sql" />
-    <Build Include="src\CreateTreatmentsMedicinesTable.sql" />
-    <Build Include="src\CreateDoctorsPartnersTable.sql" />
-    <Build Include="src\CreateEmployeesTable.sql" />
+    <Build Include="src\CreateDatabase.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="hospital-database-project-db.sln" />
