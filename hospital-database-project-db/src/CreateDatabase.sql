@@ -1,23 +1,3 @@
-CREATE TABLE [dbo].[Patients]
-(
-    [id] INT NOT NULL PRIMARY KEY,
-    [first_name] CHAR(32) NOT NULL,
-    [last_name] CHAR(32) NOT NULL,
-    [age] INT NOT NULL,
-    [gender] CHAR(1) NOT NULL,
-    [weight] INT,
-    [occupation] CHAR(64),
-    [doctor_id] INT NOT NULL,
-    [treatment_id] INT NOT NULL,
-    [room_id] INT NOT NULL,
-    CONSTRAINT FK_room
-    FOREIGN KEY (room_id) REFERENCES Rooms (id),
-    CONSTRAINT FK_treatment
-    FOREIGN KEY (treatment_id) REFERENCES Treatments (id),
-    CONSTRAINT FK_doctor
-    FOREIGN KEY (doctor_id) REFERENCES Doctors (id)
-);
-
 CREATE TABLE [dbo].[Doctors]
 (
     [id] INT NOT NULL PRIMARY KEY,
@@ -38,12 +18,21 @@ CREATE TABLE [dbo].[Treatments]
     [medicine_id] INT NOT NULL
 );
 
+CREATE TABLE [dbo].[Medicines]
+(
+    [id] INT NOT NULL PRIMARY KEY,
+    [name] CHAR(64) NOT NULL,
+    [expiration_date] DATE NOT NULL,
+    [provider] CHAR(64) NOT NULL
+);
+
 CREATE TABLE [dbo].[Rooms]
 (
     [id] INT NOT NULL PRIMARY KEY,
     [type] CHAR(64) NOT NULL,
     [specific_room_number] INT NOT NULL
 );
+
 
 CREATE TABLE [dbo].[ICUs]
 (
@@ -80,6 +69,34 @@ CREATE TABLE [dbo].[Watchmen]
     [assigned_zone] CHAR(16) NOT NULL
 );
 
+CREATE TABLE [dbo].[Shifts]
+(
+	[id] INT NOT NULL PRIMARY KEY,
+    [begin_time] DATETIME NOT NULL,
+    [end_time] DATETIME NOT NULL,
+    [description] CHAR(128)
+);
+
+CREATE TABLE [dbo].[Patients]
+(
+    [id] INT NOT NULL PRIMARY KEY,
+    [first_name] CHAR(32) NOT NULL,
+    [last_name] CHAR(32) NOT NULL,
+    [age] INT NOT NULL,
+    [gender] CHAR(1) NOT NULL,
+    [weight] INT,
+    [occupation] CHAR(64),
+    [doctor_id] INT NOT NULL,
+    [treatment_id] INT NOT NULL,
+    [room_id] INT NOT NULL,
+    CONSTRAINT FK_room
+    FOREIGN KEY (room_id) REFERENCES Rooms (id),
+    CONSTRAINT FK_treatment
+    FOREIGN KEY (treatment_id) REFERENCES Treatments (id),
+    CONSTRAINT FK_patient_doctor
+    FOREIGN KEY (doctor_id) REFERENCES Doctors (id)
+);
+
 CREATE TABLE [dbo].[Bills]
 (
     [id] INT NOT NULL PRIMARY KEY,
@@ -89,14 +106,6 @@ CREATE TABLE [dbo].[Bills]
     [patient_id] INT NOT NULL,
     CONSTRAINT FK_patients
     FOREIGN KEY (patient_id) REFERENCES Patients (id)
-);
-
-CREATE TABLE [dbo].[Medicines]
-(
-    [id] INT NOT NULL PRIMARY KEY,
-    [name] CHAR(64) NOT NULL,
-    [expiration_date] DATE NOT NULL,
-    [provider] CHAR(64) NOT NULL
 );
 
 CREATE TABLE [dbo].[Apprentices]
@@ -110,16 +119,8 @@ CREATE TABLE [dbo].[Apprentices]
     [study_year] CHAR(32) NOT NULL,
     [specialization] CHAR(64) NOT NULL,
     [doctor_id] INT NOT NULL,
-    CONSTRAINT FK_doctor
+    CONSTRAINT FK_apprentice_doctor
     FOREIGN KEY (doctor_id) REFERENCES Doctors (id)
-);
-
-CREATE TABLE [dbo].[Shifts]
-(
-	[id] INT NOT NULL PRIMARY KEY,
-    [begin_time] DATETIME NOT NULL,
-    [end_time] DATETIME NOT NULL,
-    [description] CHAR(128)
 );
 
 CREATE TABLE [dbo].[Partners]
@@ -134,8 +135,8 @@ CREATE TABLE [dbo].[Partners]
 
 CREATE TABLE [dbo].[TreatmentsMedicines]
 (
-	[treatment_id] INT NOT NULL PRIMARY KEY,
-    [medicine_id] INT NOT NULL PRIMARY KEY,
+	[treatment_id] INT NOT NULL,
+    [medicine_id] INT NOT NULL,
     [medicine_dosage] CHAR(64) NOT NULL,
     [description] CHAR(128) NOT NULL,
     CONSTRAINT treatment_medicine_pk PRIMARY KEY (treatment_id, medicine_id),
@@ -147,8 +148,8 @@ CREATE TABLE [dbo].[TreatmentsMedicines]
 
 CREATE TABLE [dbo].[DoctorsPartners]
 (
-	[doctor_id] INT NOT NULL PRIMARY KEY,
-    [partner_id] INT NOT NULL PRIMARY KEY,
+	[doctor_id] INT NOT NULL,
+    [partner_id] INT NOT NULL,
     CONSTRAINT doctor_partner_pk PRIMARY KEY (doctor_id, partner_id),
     CONSTRAINT FK_doctors
     FOREIGN KEY (doctor_id) REFERENCES Doctors (id),
