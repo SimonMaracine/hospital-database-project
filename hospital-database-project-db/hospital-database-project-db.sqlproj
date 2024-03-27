@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="src\CreateDatabase.sql" />
+    <Build Include="src\DropAllTables.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="hospital-database-project-db.sln" />
