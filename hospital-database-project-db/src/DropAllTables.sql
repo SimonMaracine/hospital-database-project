@@ -1,1 +1,17 @@
-﻿DROP TABLE IF EXISTS dbo.Employees, dbo.DoctorsPartners, dbo.TreatmentsMedicines, dbo.Apprentices, dbo.Bills, dbo.Patients, dbo.Doctors, dbo.Rooms, dbo.ICUs, dbo.Treatments, dbo.Medicines, dbo.Watchmen, dbo.Nurses, dbo.OperationTheaters, dbo.Partners, dbo.Shifts;
+﻿DROP TABLE IF EXISTS
+	dbo.Employees,
+	dbo.DoctorsPartners,
+	dbo.TreatmentsMedicines,
+	dbo.Apprentices,
+	dbo.Bills,
+	dbo.Patients,
+	dbo.Doctors,
+	dbo.Rooms,
+	dbo.ICUs,
+	dbo.Treatments,
+	dbo.Medicines,
+	dbo.Watchmen,
+	dbo.Nurses,
+	dbo.OperationTheaters,
+	dbo.Partners,
+	dbo.Shifts;
