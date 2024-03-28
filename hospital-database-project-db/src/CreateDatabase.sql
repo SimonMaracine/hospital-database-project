@@ -1,3 +1,21 @@
+CREATE TABLE [dbo].[Shifts]
+(
+	[id] INT NOT NULL PRIMARY KEY,
+    [begin_time] DATETIME NOT NULL,
+    [end_time] DATETIME NOT NULL,
+    [description] CHAR(128)
+);
+
+CREATE TABLE [dbo].[Employees]
+(
+	[id] INT NOT NULL PRIMARY KEY,
+    [type] CHAR(64) NOT NULL,
+	/* [specific_employee_id] INT NOT NULL, */
+	[shift_id] INT NOT NULL,
+    CONSTRAINT FK_shift
+    FOREIGN KEY (shift_id) REFERENCES Shifts (id)
+);
+
 CREATE TABLE [dbo].[Doctors]
 (
     [id] INT NOT NULL PRIMARY KEY,
@@ -7,7 +25,10 @@ CREATE TABLE [dbo].[Doctors]
     [gender] CHAR(1) NOT NULL,
     [studies] CHAR(64) NOT NULL,
     [specialization] CHAR(64) NOT NULL,
-    [partner_id] int NOT NULL
+    [partner_id] int NOT NULL,
+    [employee_id] INT NOT NULL,
+    CONSTRAINT FK_doctor_employee
+    FOREIGN KEY (employee_id) REFERENCES Employees (id)
 );
 
 CREATE TABLE [dbo].[Treatments]
@@ -30,7 +51,8 @@ CREATE TABLE [dbo].[Rooms]
 (
     [id] INT NOT NULL PRIMARY KEY,
     [type] CHAR(64) NOT NULL,
-    [specific_room_number] INT NOT NULL
+    /*[specific_room_number] INT NOT NULL */
+
 );
 
 
@@ -38,14 +60,20 @@ CREATE TABLE [dbo].[ICUs]
 (
     [number] INT NOT NULL PRIMARY KEY,
     [floor] INT NOT NULL,
-    [type] CHAR(64) NOT NULL
+    [type] CHAR(64) NOT NULL,
+    [room_id] INT NOT NULL,
+    CONSTRAINT FK_ICU_room
+    FOREIGN KEY (room_id) REFERENCES Rooms (id)
 );
 
 CREATE TABLE [dbo].[OperationTheaters]
 (
     [number] INT NOT NULL PRIMARY KEY,
     [floor] INT NOT NULL,
-    [specialization] CHAR(64) NOT NULL
+    [specialization] CHAR(64) NOT NULL,
+    [room_id] INT NOT NULL,
+    CONSTRAINT FK_operation_theater_room
+    FOREIGN KEY (room_id) REFERENCES Rooms (id)
 );
 
 CREATE TABLE [dbo].[Nurses]
@@ -56,7 +84,10 @@ CREATE TABLE [dbo].[Nurses]
     [age] INT NOT NULL,
     [gender] CHAR(1) NOT NULL,
     [studies] CHAR(64) NOT NULL,
-    [floor] INT
+    [floor] INT,
+    [employee_id] INT NOT NULL,
+    CONSTRAINT FK_nurse_employee
+    FOREIGN KEY (employee_id) REFERENCES Employees (id)
 );
 
 CREATE TABLE [dbo].[Watchmen]
@@ -66,15 +97,10 @@ CREATE TABLE [dbo].[Watchmen]
     [last_name] CHAR(32) NOT NULL,
     [age] INT NOT NULL,
     [gender] CHAR(1) NOT NULL,
-    [assigned_zone] CHAR(16) NOT NULL
-);
-
-CREATE TABLE [dbo].[Shifts]
-(
-	[id] INT NOT NULL PRIMARY KEY,
-    [begin_time] DATETIME NOT NULL,
-    [end_time] DATETIME NOT NULL,
-    [description] CHAR(128)
+    [assigned_zone] CHAR(16) NOT NULL,
+    [employee_id] INT NOT NULL,
+    CONSTRAINT FK_watchman_employee
+    FOREIGN KEY (employee_id) REFERENCES Employees (id)
 );
 
 CREATE TABLE [dbo].[Patients]
@@ -155,14 +181,4 @@ CREATE TABLE [dbo].[DoctorsPartners]
     FOREIGN KEY (doctor_id) REFERENCES Doctors (id),
     CONSTRAINT FK_partners
     FOREIGN KEY (partner_id) REFERENCES Partners (id)
-);
-
-CREATE TABLE [dbo].[Employees]
-(
-	[id] INT NOT NULL PRIMARY KEY,
-    [type] CHAR(64) NOT NULL,
-	[specific_employee_id] INT NOT NULL,
-	[shift_id] INT NOT NULL,
-    CONSTRAINT FK_shift
-    FOREIGN KEY (shift_id) REFERENCES Shifts (id)
 );

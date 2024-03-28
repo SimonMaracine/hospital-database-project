@@ -60,7 +60,8 @@
     <Folder Include="Tables files" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="src\CreateDatabase.sql" />
+    <None Include="src\CreateDatabase.sql" />
+    <None Include="src\DropAllTables.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="hospital-database-project-db.sln" />
