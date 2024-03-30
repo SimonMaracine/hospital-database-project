@@ -1,6 +1,6 @@
 CREATE TABLE [dbo].[Shifts]
 (
-	[id] INT NOT NULL PRIMARY KEY,
+	[id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
     [begin_time] DATETIME NOT NULL,
     [end_time] DATETIME NOT NULL,
     [description] CHAR(128)
@@ -8,7 +8,7 @@ CREATE TABLE [dbo].[Shifts]
 
 CREATE TABLE [dbo].[Employees]
 (
-	[id] INT NOT NULL PRIMARY KEY,
+	[id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
     [type] CHAR(64) NOT NULL,
 	[shift_id] INT NOT NULL,
     CONSTRAINT FK_employee_shift
@@ -17,7 +17,7 @@ CREATE TABLE [dbo].[Employees]
 
 CREATE TABLE [dbo].[Doctors]
 (
-    [id] INT NOT NULL PRIMARY KEY,
+    [id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
     [first_name] CHAR(32) NOT NULL,
     [last_name] CHAR(32) NOT NULL,
     [age] INT NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE [dbo].[Doctors]
 
 CREATE TABLE [dbo].[Treatments]
 (
-    [id] INT NOT NULL PRIMARY KEY,
+    [id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
     [name] CHAR(64) NOT NULL,
     [duration] INT NOT NULL,
     [medicine_id] INT NOT NULL
@@ -40,7 +40,7 @@ CREATE TABLE [dbo].[Treatments]
 
 CREATE TABLE [dbo].[Medicines]
 (
-    [id] INT NOT NULL PRIMARY KEY,
+    [id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
     [name] CHAR(64) NOT NULL,
     [expiration_date] DATE NOT NULL,
     [provider] CHAR(64) NOT NULL
@@ -75,7 +75,7 @@ CREATE TABLE [dbo].[OperationTheaters]
 
 CREATE TABLE [dbo].[Nurses]
 (
-    [id] INT NOT NULL PRIMARY KEY,
+    [id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
     [first_name] CHAR(32) NOT NULL,
     [last_name] CHAR(32) NOT NULL,
     [age] INT NOT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE [dbo].[Nurses]
 
 CREATE TABLE [dbo].[Watchmen]
 (
-    [id] INT NOT NULL PRIMARY KEY,
+    [id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
     [first_name] CHAR(32) NOT NULL,
     [last_name] CHAR(32) NOT NULL,
     [age] INT NOT NULL,
@@ -102,7 +102,7 @@ CREATE TABLE [dbo].[Watchmen]
 
 CREATE TABLE [dbo].[Patients]
 (
-    [id] INT NOT NULL PRIMARY KEY,
+    [id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
     [first_name] CHAR(32) NOT NULL,
     [last_name] CHAR(32) NOT NULL,
     [age] INT NOT NULL,
@@ -122,7 +122,7 @@ CREATE TABLE [dbo].[Patients]
 
 CREATE TABLE [dbo].[Bills]
 (
-    [id] INT NOT NULL PRIMARY KEY,
+    [id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
     [name] CHAR(64) NOT NULL,
     [sum] DECIMAL NOT NULL,
     [state] CHAR(8) NOT NULL,
@@ -133,7 +133,7 @@ CREATE TABLE [dbo].[Bills]
 
 CREATE TABLE [dbo].[Apprentices]
 (
-	[id] INT NOT NULL PRIMARY KEY,
+	[id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
     [first_name] CHAR(32) NOT NULL,
     [last_name] CHAR(32) NOT NULL,
     [age] INT NOT NULL,
@@ -148,7 +148,7 @@ CREATE TABLE [dbo].[Apprentices]
 
 CREATE TABLE [dbo].[Partners]
 (
-	[id] INT NOT NULL PRIMARY KEY,
+	[id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
     [name] CHAR(64) NOT NULL,
     [partnership_type] CHAR(32) NOT NULL,
     [begin_date] DATE NOT NULL,
