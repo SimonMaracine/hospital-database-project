@@ -10,9 +10,8 @@ CREATE TABLE [dbo].[Employees]
 (
 	[id] INT NOT NULL PRIMARY KEY,
     [type] CHAR(64) NOT NULL,
-	/* [specific_employee_id] INT NOT NULL, */
 	[shift_id] INT NOT NULL,
-    CONSTRAINT FK_shift
+    CONSTRAINT FK_employee_shift
     FOREIGN KEY (shift_id) REFERENCES Shifts (id)
 );
 
@@ -50,9 +49,7 @@ CREATE TABLE [dbo].[Medicines]
 CREATE TABLE [dbo].[Rooms]
 (
     [id] INT NOT NULL PRIMARY KEY,
-    [type] CHAR(64) NOT NULL,
-    /*[specific_room_number] INT NOT NULL */
-
+    [type] CHAR(64) NOT NULL
 );
 
 
@@ -117,7 +114,7 @@ CREATE TABLE [dbo].[Patients]
     [room_id] INT NOT NULL,
     CONSTRAINT FK_room
     FOREIGN KEY (room_id) REFERENCES Rooms (id),
-    CONSTRAINT FK_treatment
+    CONSTRAINT FK_patient_treatment
     FOREIGN KEY (treatment_id) REFERENCES Treatments (id),
     CONSTRAINT FK_patient_doctor
     FOREIGN KEY (doctor_id) REFERENCES Doctors (id)
@@ -130,7 +127,7 @@ CREATE TABLE [dbo].[Bills]
     [sum] DECIMAL NOT NULL,
     [state] CHAR(8) NOT NULL,
     [patient_id] INT NOT NULL,
-    CONSTRAINT FK_patients
+    CONSTRAINT FK_bill_patient
     FOREIGN KEY (patient_id) REFERENCES Patients (id)
 );
 
@@ -165,10 +162,10 @@ CREATE TABLE [dbo].[TreatmentsMedicines]
     [medicine_id] INT NOT NULL,
     [medicine_dosage] CHAR(64) NOT NULL,
     [description] CHAR(128) NOT NULL,
-    CONSTRAINT treatment_medicine_pk PRIMARY KEY (treatment_id, medicine_id),
-    CONSTRAINT FK_treatments
+    CONSTRAINT PK_treatment_medicine PRIMARY KEY (treatment_id, medicine_id),
+    CONSTRAINT FK_medicine_treatment
     FOREIGN KEY (treatment_id) REFERENCES Treatments (id),
-    CONSTRAINT FK_medicines
+    CONSTRAINT FK_treatment_medicine
     FOREIGN KEY (medicine_id) REFERENCES Medicines (id)
 );
 
@@ -176,9 +173,9 @@ CREATE TABLE [dbo].[DoctorsPartners]
 (
 	[doctor_id] INT NOT NULL,
     [partner_id] INT NOT NULL,
-    CONSTRAINT doctor_partner_pk PRIMARY KEY (doctor_id, partner_id),
-    CONSTRAINT FK_doctors
+    CONSTRAINT PK_doctor_partner PRIMARY KEY (doctor_id, partner_id),
+    CONSTRAINT FK_partner_doctor
     FOREIGN KEY (doctor_id) REFERENCES Doctors (id),
-    CONSTRAINT FK_partners
+    CONSTRAINT FK_doctor_partner
     FOREIGN KEY (partner_id) REFERENCES Partners (id)
 );
