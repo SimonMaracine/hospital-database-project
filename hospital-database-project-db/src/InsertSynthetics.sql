@@ -2,167 +2,122 @@ USE [hospital-database-project-db]
 GO
 
 INSERT INTO dbo.Rooms
-           (id
-           ,type)
+           (type)
      VALUES
-           ('1'
-		   ,'A'),
-		   ('2'
-		   ,'A'),
-           ('3'
-		   ,'B'),
-           ('4'
-		   ,'B'),
-           ('5'
-		   ,'B'),
-           ('6'
-		   ,'A'),
-           ('7'
-		   ,'B'),
-           ('8'
-		   ,'A'),
-           ('9'
-		   ,'A'),
-           ('10'
-		   ,'A')
+           ('A'),
+		   ('A'),
+           ('B'),
+           ('B'),
+           ('B'),
+           ('A'),
+           ('B'),
+           ('A'),
+           ('A'),
+           ('A')
 GO
 
 INSERT INTO dbo.Medicines
-           (id
-           ,name
+           (name
            ,expiration_date
            ,provider)
      VALUES
-           ('1'
-		   ,'Halotan'
+           ('Halotan'
            ,'2024-11-21'
            ,'Amgen'),
-		   ('2'
-		   ,'Atropina'
+		   ('Atropina'
            ,'2025-10-11'
            ,'UCB'),
-           ('3'
-		   ,'Ibuprofen'
+           ('Ibuprofen'
            ,'2027-03-08'
            ,'AstraZeneca'),
-           ('4'
-		   ,'Morfina'
+           ('Morfina'
            ,'2025-12-01'
            ,'Roche'),
-           ('5'
-		   ,'Penicilamina'
+           ('Penicilamina'
            ,'2025-10-11'
            ,'Labormed'),
-           ('6'
-		   ,'Diazepam'
+           ('Diazepam'
            ,'2028-03-16'
            ,'Stada'),
-           ('7'
-		   ,'Dapsona'
+           ('Dapsona'
            ,'2028-03-10'
            ,'Pharco'),
-           ('8'
-		   ,'Paracetamol'
+           ('Paracetamol'
            ,'2026-10-01'
            ,'Krka'),
-           ('9'
-		   ,'Citarabina'
+           ('Citarabina'
            ,'2025-07-04'
            ,'Genzyme'),
-           ('10'
-		   ,'Etanol'
+           ('Etanol'
            ,'2027-04-22'
            ,'Pfizer')
 GO
 
 INSERT INTO dbo.Shifts
-           (id
-           ,begin_time
+           (begin_time
            ,end_time
            ,description)
      VALUES
-           ('1'
-		   ,'2024-03-28 10:00:00'
+           ('2024-03-28 10:00:00'
            ,'2024-03-28 18:00:00'
            ,'General 8 hour shift'),
-		   ('2'
-		   ,'2024-03-28 08:00:00'
+		   ('2024-03-28 08:00:00'
            ,'2024-03-28 18:00:00'
            ,'General 10 hour shift'),
-           ('3'
-		   ,'2024-03-28 08:00:00'
+           ('2024-03-28 08:00:00'
            ,'2024-03-28 12:00:00'
            ,'Doctor group 1 shift'),
-           ('4'
-		   ,'2024-03-28 12:00:00'
+           ('2024-03-28 12:00:00'
            ,'2024-03-28 16:00:00'
            ,'Doctor group 2 shift'),
-           ('5'
-		   ,'2024-03-28 16:00:00'
+           ('2024-03-28 16:00:00'
            ,'2024-03-28 20:00:00'
            ,'Doctor group 3 shift'),
-           ('6'
-		   ,'2024-03-28 08:00:00'
+           ('2024-03-28 08:00:00'
            ,'2024-03-28 14:00:00'
            ,'Nurses group 1 shift'),
-           ('7'
-		   ,'2024-03-28 14:00:00'
+           ('2024-03-28 14:00:00'
            ,'2024-03-28 20:00:00'
            ,'Nurses group 2 shift'),
-           ('8'
-		   ,'2024-03-28 08:00:00'
+           ('2024-03-28 08:00:00'
            ,'2024-03-28 16:00:00'
            ,'Watchmen group 1 shift'),
-           ('9'
-		   ,'2024-03-28 16:00:00'
+           ('2024-03-28 16:00:00'
            ,'2024-03-28 00:00:00'
            ,'Watchmen group 2 shift'),
-           ('10'
-		   ,'2024-03-28 00:00:00'
+           ('2024-03-28 00:00:00'
            ,'2024-03-28 08:00:00'
            ,'Watchmen group 3 shift')
 GO
 
 INSERT INTO dbo.Employees
-           (id
-           ,type
+           (type
            ,shift_id)
      VALUES
-           ('1'
-		   ,'Doctor'
+           ('Doctor'
            ,'3'),
-           ('2'
-		   ,'Doctor'
+           ('Doctor'
            ,'4'),
-           ('3'
-		   ,'Nurse'
+           ('Nurse'
            ,'6'),
-           ('4'
-		   ,'Nurse'
+           ('Nurse'
            ,'7'),
-           ('5'
-		   ,'Doctor'
+           ('Doctor'
            ,'5'),
-           ('6'
-		   ,'Watchman'
+           ('Watchman'
            ,'8'),
-           ('7'
-		   ,'Doctor'
+           ('Doctor'
            ,'3'),
-           ('8'
-		   ,'Nurse'
+           ('Nurse'
            ,'7'),
-           ('9'
-		   ,'Nurse'
+           ('Nurse'
            ,'6'),
-           ('10'
-		   ,'Watchman'
+           ('Watchman'
            ,'10')
 GO
 
 INSERT INTO dbo.Doctors
-           (id
-           ,first_name
+           (first_name
            ,last_name
            ,age
            ,gender
@@ -171,8 +126,7 @@ INSERT INTO dbo.Doctors
            ,partner_id
            ,employee_id)
      VALUES
-           ('1'
-		   ,'Ryan'
+           ('Ryan'
            ,'Thompson'
            ,'29'
            ,'M'
@@ -180,8 +134,7 @@ INSERT INTO dbo.Doctors
            ,'Plastic Surgery'
            ,'1'
            ,'1'),
-           ('2'
-		   ,'Jasmine'
+           ('Jasmine'
            ,'Patel'
            ,'35'
            ,'F'
@@ -189,8 +142,7 @@ INSERT INTO dbo.Doctors
            ,'Surgery'
            ,'2'
            ,'2'),
-           ('3'
-		   ,'Sophia'
+           ('Sophia'
            ,'Rodriguez'
            ,'30'
            ,'F'
@@ -198,8 +150,7 @@ INSERT INTO dbo.Doctors
            ,'Cardiology'
            ,'3'
            ,'7'),
-           ('4'
-		   ,'Caleb'
+           ('Caleb'
            ,'Campbell'
            ,'42'
            ,'M'
@@ -210,33 +161,26 @@ INSERT INTO dbo.Doctors
 GO
 
 INSERT INTO dbo.Treatments
-           (id
-           ,name
+           (name
            ,duration
            ,medicine_id)
      VALUES
-           ('1'
-		   ,'Basic 1'
+           ('Basic 1'
            ,'24'
            ,'2'),
-		   ('2'
-		   ,'Basic 2'
+		   ('Basic 2'
            ,'48'
            ,'2'),
-		   ('3'
-		   ,'Basic 3'
+		   ('Basic 3'
            ,'64'
            ,'3'),
-		   ('4'
-		   ,'Advanced 1'
+		   ('Advanced 1'
            ,'24'
            ,'4'),
-		   ('5'
-		   ,'Advanced 5'
+		   ('Advanced 5'
            ,'48'
            ,'5'),
-		   ('6'
-		   ,'Advanced 6'
+		   ('Advanced 6'
            ,'64'
            ,'6')
 GO
@@ -298,8 +242,7 @@ INSERT INTO dbo.OperationTheaters
 GO
 
 INSERT INTO dbo.Nurses
-           (id
-           ,first_name
+           (first_name
            ,last_name
            ,age
            ,gender
@@ -307,32 +250,28 @@ INSERT INTO dbo.Nurses
            ,floor
            ,employee_id)
      VALUES
-           ('1'
-		   ,'Amelia'
+           ('Amelia'
            ,'Bennett'
            ,'37'
            ,'F'
            ,'College'
            ,'1'
            ,'3'),
-		   ('2'
-		   ,'Lucas'
+		   ('Lucas'
            ,'Nguyen'
            ,'28'
            ,'M'
            ,'College'
            ,'1'
            ,'4'),
-           ('3'
-		   ,'Harper'
+           ('Harper'
            ,'Patel'
            ,'31'
            ,'M'
            ,'College'
            ,'2'
            ,'8'),
-           ('4'
-		   ,'Ethan'
+           ('Ethan'
            ,'Khan'
            ,'33'
            ,'M'
@@ -342,23 +281,20 @@ INSERT INTO dbo.Nurses
 GO
 
 INSERT INTO dbo.Watchmen
-           (id
-           ,first_name
+           (first_name
            ,last_name
            ,age
            ,gender
            ,assigned_zone
            ,employee_id)
      VALUES
-           ('1'
-		   ,'Emily'
+           ('Emily'
            ,'Johnson'
            ,'32'
            ,'F'
            ,'1C'
            ,'6'),
-		   ('2'
-		   ,'Lucas'
+		   ('Lucas'
            ,'Nguyen'
            ,'45'
            ,'M'
@@ -367,8 +303,7 @@ INSERT INTO dbo.Watchmen
 GO
 
 INSERT INTO dbo.Patients
-           (id
-           ,first_name
+           (first_name
            ,last_name
            ,age
            ,gender
@@ -378,8 +313,7 @@ INSERT INTO dbo.Patients
            ,treatment_id
            ,room_id)
      VALUES
-           ('1'
-		   ,'Benjamin'
+           ('Benjamin'
            ,'Clarke'
            ,'35'
            ,'M'
@@ -388,8 +322,7 @@ INSERT INTO dbo.Patients
            ,'1'
            ,'3'
            ,'2'),
-           ('2'
-		   ,'Olivia'
+           ('Olivia'
            ,'Nguyen'
            ,'24'
            ,'F'
@@ -398,8 +331,7 @@ INSERT INTO dbo.Patients
            ,'2'
            ,'2'
            ,'1'),
-           ('3'
-		   ,'Mason'
+           ('Mason'
            ,'Patel'
            ,'40'
            ,'M'
@@ -408,8 +340,7 @@ INSERT INTO dbo.Patients
            ,'3'
            ,'5'
            ,'7'),
-           ('4'
-		   ,'Harper'
+           ('Harper'
            ,'Williams'
            ,'40'
            ,'M'
@@ -418,8 +349,7 @@ INSERT INTO dbo.Patients
            ,'4'
            ,'5'
            ,'8'),
-           ('5'
-		   ,'Elizabeth'
+           ('Elizabeth'
            ,'Khan'
            ,'35'
            ,'F'
@@ -431,42 +361,35 @@ INSERT INTO dbo.Patients
 GO
 
 INSERT INTO dbo.Bills
-           (id
-           ,name
+           (name
            ,sum
            ,state
            ,patient_id)
      VALUES
-           ('1'
-		   ,'Medical Consultation'
+           ('Medical Consultation'
            ,'200'
            ,'unpaid'
            ,'1'),
-           ('2'
-		   ,'Surgery'
+           ('Surgery'
            ,'1000'
            ,'paid'
            ,'2'),
-           ('3'
-		   ,'Medical Consultation'
+           ('Medical Consultation'
            ,'100'
            ,'paid'
            ,'4'),
-           ('4'
-		   ,'Physiotherapy'
+           ('Physiotherapy'
            ,'400'
            ,'paid'
            ,'5'),
-           ('5'
-		   ,'Medical Consultation'
+           ('Medical Consultation'
            ,'200'
            ,'unpaid'
            ,'3')
 GO
 
 INSERT INTO dbo.Apprentices
-           (id
-           ,first_name
+           (first_name
            ,last_name
            ,age
            ,gender
@@ -475,8 +398,7 @@ INSERT INTO dbo.Apprentices
            ,specialization
            ,doctor_id)
      VALUES
-           ('1'
-		   ,'Sophia'
+           ('Sophia'
            ,'Campbell'
            ,'22'
            ,'F'
@@ -484,8 +406,7 @@ INSERT INTO dbo.Apprentices
            ,'5'
            ,'Surgery'
            ,'1'),
-           ('2'
-		   ,'Noah'
+           ('Noah'
            ,'Campbell'
            ,'23'
            ,'M'
@@ -493,8 +414,7 @@ INSERT INTO dbo.Apprentices
            ,'5'
            ,'Surgery'
            ,'2'),
-           ('3'
-		   ,'Emily'
+           ('Emily'
            ,'Chen'
            ,'21'
            ,'F'
@@ -505,27 +425,23 @@ INSERT INTO dbo.Apprentices
 GO
 
 INSERT INTO dbo.Partners
-           (id
-           ,name
+           (name
            ,partnership_type
            ,begin_date
            ,end_date
            ,doctor_id)
      VALUES
-           ('1'
-		   ,'Centrofarm'
+           ('Centrofarm'
            ,'Promotional'
            ,'2024-03-20'
            ,'2025-03-20'
            ,'1'),
-           ('2'
-		   ,'Catena'
+           ('Catena'
            ,'Promotional'
            ,'2024-01-23'
            ,'2025-01-23'
            ,'2'),
-           ('3'
-		   ,'UMF'
+           ('UMF'
            ,'Apprenticeship program'
            ,'2022-11-22'
            ,'2026-11-22'
