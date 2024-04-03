@@ -3,17 +3,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>hospital_database_project_db</Name>
+    <Name>hospital_database</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{c16b9c71-e394-435d-91bf-9f606515b5d0}</ProjectGuid>
+    <ProjectGuid>{d91f47ee-7738-4c79-bf11-59382d6d1127}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>hospital_database_project_db</RootNamespace>
-    <AssemblyName>hospital_database_project_db</AssemblyName>
-    <ModelCollation>1033, CI</ModelCollation>
+    <RootNamespace>hospital_database</RootNamespace>
+    <AssemblyName>hospital_database</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -22,6 +22,8 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -56,13 +58,36 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Tables files" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="hospital-database-project-db.sln" />
-    <None Include="hospital-database-project-db.sqlproj.user" />
+    <Build Include="Shifts.sql" />
+    <Build Include="Employees.sql" />
+    <Build Include="Doctors.sql" />
+    <Build Include="Treatments.sql" />
+    <Build Include="Medicines.sql" />
+    <Build Include="Rooms.sql" />
+    <Build Include="ICUs.sql" />
+    <Build Include="OperationTheaters.sql" />
+    <Build Include="Nurses.sql" />
+    <Build Include="Watchmen.sql" />
+    <Build Include="Patients.sql" />
+    <Build Include="Bills.sql" />
+    <Build Include="Apprentices.sql" />
+    <Build Include="Partners.sql" />
+    <Build Include="TreatmentsMedicines.sql" />
+    <Build Include="DoctorsPartners.sql" />
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <Build Include="TriggerPatientsGender.sql" />
+    <Build Include="TriggerDoctorsGender.sql" />
+    <Build Include="TriggerApprenticesGender.sql" />
+    <Build Include="TriggerNursesGender.sql" />
+    <Build Include="TriggerWatchmenGender.sql" />
+    <Build Include="TriggerPatientsWeight.sql" />
+    <Build Include="TriggerShiftsTime.sql" />
+    <Build Include="TriggerPartnersDate.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="TableTest.sql" />
+    <None Include="Scripts\InsertInvalidGender.sql" />
   </ItemGroup>
 </Project>
