@@ -77,7 +77,7 @@
     <Build Include="Partners.sql" />
     <Build Include="TreatmentsMedicines.sql" />
     <Build Include="DoctorsPartners.sql" />
-    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <None Include="Scripts\InsertData.sql" />
     <Build Include="TriggerPatientsGender.sql" />
     <Build Include="TriggerDoctorsGender.sql" />
     <Build Include="TriggerApprenticesGender.sql" />
@@ -92,5 +92,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\InsertInvalidGender.sql" />
+    <None Include="Scripts\DeleteData.sql" />
   </ItemGroup>
 </Project>
