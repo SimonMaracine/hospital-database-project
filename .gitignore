@@ -4,3 +4,4 @@ bin/
 *.dbmdl
 *.jfm
 *.htm
+*.log
