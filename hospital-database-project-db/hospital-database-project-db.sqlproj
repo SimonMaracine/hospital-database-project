@@ -69,4 +69,8 @@
     <None Include="hospital-database-project-db.sln" />
     <None Include="hospital-database-project-db.sqlproj.user" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="src\DeleteSynthetics.sql" />
+    <Build Include="src\InsertSynthetics.sql" />
+  </ItemGroup>
 </Project>
