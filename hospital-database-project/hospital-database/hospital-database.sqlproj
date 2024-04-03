@@ -86,6 +86,9 @@
     <Build Include="TriggerPatientsWeight.sql" />
     <Build Include="TriggerShiftsTime.sql" />
     <Build Include="TriggerPartnersDate.sql" />
+    <Build Include="ViewDoctorsShifts.sql" />
+    <Build Include="ViewWatchmenShifts.sql" />
+    <Build Include="ViewNursesShifts.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\InsertInvalidGender.sql" />
