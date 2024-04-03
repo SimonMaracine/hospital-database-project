@@ -1,4 +1,5 @@
-USE [hospital-database-project-db]
+﻿
+USE [hospital-database]
 GO
 
 INSERT INTO dbo.Rooms
