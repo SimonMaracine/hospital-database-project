@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Apprentices]
 (
-	[id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	[id] INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     [first_name] CHAR(32) NOT NULL,
     [last_name] CHAR(32) NOT NULL,
     [age] INT NOT NULL,
