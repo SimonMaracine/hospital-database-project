@@ -1,4 +1,5 @@
-﻿USE [hospital-database-project-db]
+﻿USE [hospital-database]
 GO
+
 SELECT * FROM [dbo].[Apprentices] 
 WHERE age > 21;
