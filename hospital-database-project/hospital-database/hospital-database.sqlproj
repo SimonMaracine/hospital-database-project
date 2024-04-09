@@ -89,6 +89,22 @@
     <Build Include="ViewDoctorsShifts.sql" />
     <Build Include="ViewWatchmenShifts.sql" />
     <Build Include="ViewNursesShifts.sql" />
+    <None Include="Scripts\SelectApprenticesAge.sql" />
+    <None Include="Scripts\SelectApprenticesDoctor.sql" />
+    <None Include="Scripts\SelectBillsPaidSum.sql" />
+    <None Include="Scripts\SelectBillsPatient.sql" />
+    <None Include="Scripts\SelectBillsState.sql" />
+    <None Include="Scripts\SelectBillsSum.sql" />
+    <None Include="Scripts\SelectDoctorsFemaleAge.sql" />
+    <None Include="Scripts\SelectDoctorSpecialization.sql" />
+    <None Include="Scripts\SelectDoctorStudies.sql" />
+    <None Include="Scripts\SelectExpiredMedicines.sql" />
+    <None Include="Scripts\SelectMedicineCountByProvider.sql" />
+    <None Include="Scripts\SelectMedicinesCertainProvider.sql" />
+    <None Include="Scripts\SelectPatientsICU.sql" />
+    <None Include="Scripts\SelectPatientsOperationTheaters.sql" />
+    <None Include="Scripts\SelectTreatmentsDetailed.sql" />
+    <None Include="Scripts\UpdateMedicineExpirationDate.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\InsertInvalidGender.sql" />
