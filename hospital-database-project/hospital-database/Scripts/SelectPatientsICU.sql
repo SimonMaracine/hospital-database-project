@@ -2,14 +2,14 @@ USE [hospital-database]
 GO
 
 SELECT 
-    CONCAT(P.first_name, ' ', P.last_name) AS PatientFullName,
-    IC.number AS RoomNumber,
-    IC.type AS ICUType,
-    R.type AS RoomType,
-    R.id AS RoomID
+    CONCAT(Patients.first_name, ' ', Patients.last_name) AS PatientFullName,
+    ICUs.number AS RoomNumber,
+    ICUs.type AS ICUType,
+    Rooms.type AS RoomType,
+    Rooms.id AS RoomID
 FROM 
-    Patients AS P
+    Patients
 JOIN 
-    ICUs AS IC ON P.room_id = IC.number
-JOIN 
-    Rooms AS R ON IC.number = R.id;
+    ICUs ON Patients.room_id = ICUs.room_id
+JOIN
+    Rooms ON ICUs.room_id = Rooms.id

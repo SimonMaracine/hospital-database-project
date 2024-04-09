@@ -2,15 +2,15 @@ USE [hospital-database]
 GO
 
 SELECT 
-    CONCAT(P.first_name, ' ', P.last_name) AS PatientFullName,
-    OT.number AS RoomNumber,
-    OT.floor AS RoomFloor,
-    OT.specialization AS OTSpecialization,
-    R.type AS RoomType,
-    R.id AS RoomID
+    CONCAT(Patients.first_name, ' ', Patients.last_name) AS PatientFullName,
+    OperationTheaters.number AS RoomNumber,
+    OperationTheaters.floor AS RoomFloor,
+    OperationTheaters.specialization AS OTSpecialization,
+    Rooms.type AS RoomType,
+    Rooms.id AS RoomID
 FROM 
-    Patients AS P
+    Patients
 JOIN 
-    OperationTheaters AS OT ON P.room_id = OT.number
+    OperationTheaters ON Patients.room_id = OperationTheaters.room_id
 JOIN 
-    Rooms AS R ON OT.number = R.id;
+    Rooms ON OperationTheaters.room_id = Rooms.id;

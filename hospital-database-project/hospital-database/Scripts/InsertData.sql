@@ -285,25 +285,25 @@ INSERT INTO dbo.ICUs
         )
     VALUES
         (
-            '1',
+            '7',
             '1',
             'Neonatology',
             '3'
         ),
         (
-            '2',
+            '8',
             '1',
             'Cardiac',
             '4'
         ),
         (
-            '3',
+            '9',
             '2',
             'Neurology',
             '5'
         ),
         (
-            '4',
+            '10',
             '2',
             'Surgery',
             '7'
