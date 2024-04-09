@@ -7,8 +7,8 @@
     [gender] CHAR(1) NOT NULL,
     [studies] CHAR(64) NOT NULL,
     [specialization] CHAR(64) NOT NULL,
-    [partner_id] int NOT NULL,
-    [employee_id] INT NOT NULL,
+    [partner_id] INT NOT NULL,
+    [employee_id] INT UNIQUE NOT NULL,
     CONSTRAINT FK_doctor_employee
     FOREIGN KEY (employee_id) REFERENCES Employees (id)
 );
