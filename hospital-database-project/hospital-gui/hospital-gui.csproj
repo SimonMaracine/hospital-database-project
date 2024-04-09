@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\hospital-database\hospital-database.sqlproj">
+      <Project>{d91f47ee-7738-4c79-bf11-59382d6d1127}</Project>
+      <Name>hospital-database</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,5 +3,6 @@
   <PropertyGroup>
     <StartupScript>(Blank)</StartupScript>
     <StartAction>StartNone</StartAction>
+    <CreateNewDatabase>False</CreateNewDatabase>
   </PropertyGroup>
 </Project>
