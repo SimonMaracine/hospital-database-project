@@ -1,4 +1,4 @@
-﻿USE [hospital-database-project-db]
+﻿USE [hospital-database]
 GO
 
 DELETE FROM dbo.DoctorsPartners;
