@@ -106,6 +106,7 @@
     <None Include="Scripts\SelectPatientsOperationTheaters.sql" />
     <None Include="Scripts\SelectTreatmentsDetailed.sql" />
     <None Include="Scripts\UpdateMedicineExpirationDate.sql" />
+    <Build Include="ViewMedicinesSimplified.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\InsertInvalidGender.sql" />
