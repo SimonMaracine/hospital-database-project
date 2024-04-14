@@ -1,9 +1,9 @@
 ﻿CREATE TRIGGER [TriggerWatchmenGender]
 	ON [dbo].[Watchmen]
-	AFTER INSERT, UPDATE
+	AFTER INSERT
 	AS
 	BEGIN
-		SET NOCOUNT ON  /* Don't return number of rows affected */
+		SET NOCOUNT ON
 
 		IF EXISTS (
 			SELECT id

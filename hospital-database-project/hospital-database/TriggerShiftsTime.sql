@@ -1,6 +1,6 @@
 ﻿CREATE TRIGGER [TriggerShiftsTime]
 	ON [dbo].[Shifts]
-	AFTER INSERT, UPDATE
+	AFTER INSERT
 	AS
 	BEGIN
 		SET NOCOUNT ON

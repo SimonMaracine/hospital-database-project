@@ -1,6 +1,6 @@
 ﻿CREATE TRIGGER [TriggerApprenticesGender]
 	ON [dbo].[Apprentices]
-	AFTER INSERT, UPDATE
+	AFTER INSERT
 	AS
 	BEGIN
 		SET NOCOUNT ON  /* Don't return number of rows affected */

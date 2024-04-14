@@ -1,6 +1,6 @@
 ﻿CREATE TRIGGER [TriggerPatientsWeight]
 	ON [dbo].[Patients]
-	AFTER INSERT, UPDATE
+	AFTER INSERT
 	AS
 	BEGIN
 		SET NOCOUNT ON

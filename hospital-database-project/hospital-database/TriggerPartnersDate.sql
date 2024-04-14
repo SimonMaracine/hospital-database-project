@@ -1,6 +1,6 @@
 ﻿CREATE TRIGGER [TriggerPartnersDate]
 	ON [dbo].[Partners]
-	AFTER INSERT, UPDATE
+	AFTER INSERT
 	AS
 	BEGIN
 		SET NOCOUNT ON
